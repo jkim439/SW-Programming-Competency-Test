@@ -1,6 +1,7 @@
 def merge_sort(data):
     if len(data) <= 1:
         return data
+
     else:
         median = len(data) // 2
         left = merge_sort(data[:median])

@@ -1,8 +1,8 @@
 def insertion_sort(data):
     for turn in range(1, len(data)):
-        for index in range(turn, 0, -1):
-            if data[index - 1] > data[index]:
-                data[index - 1], data[index] = data[index], data[index - 1]
+        for i in range(turn, 0, -1):
+            if data[i - 1] > data[i]:
+                data[i - 1], data[i] = data[i], data[i - 1]
             else:
                 break
     return data

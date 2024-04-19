@@ -1,10 +1,11 @@
 def quick_sort(data):
     if len(data) <= 1:
         return data
+
     else:
         pivot = data[0]
-        left = [item for item in data if item < pivot]
-        right = [item for item in data if pivot < item]
+        left = [i for i in data if i < pivot]
+        right = [i for i in data if i > pivot]
         return quick_sort(left) + [pivot] + quick_sort(right)
 
 

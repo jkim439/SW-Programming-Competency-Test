@@ -1,9 +1,9 @@
 def bubble_sort(data):
     for turn in range(1, len(data)):
         swap = False
-        for index in range(len(data) - turn):
-            if data[index] > data[index + 1]:
-                data[index], data[index + 1] = data[index + 1], data[index]
+        for i in range(len(data) - turn):
+            if data[i] > data[i + 1]:
+                data[i], data[i + 1] = data[i + 1], data[i]
                 swap = True
         if not swap:
             break
