@@ -28,3 +28,15 @@ def topological_sort():
 
 
 print(topological_sort())
+
+"""
+[INPUT]
+5 4
+2 4
+3 5
+2 3
+1 2
+
+[OUTPUT]
+[1, 2, 4, 3, 5]
+"""

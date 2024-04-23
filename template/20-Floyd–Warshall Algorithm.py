@@ -1,7 +1,7 @@
 def floyd_warshall(n, graph):
     distances = [[float("inf")] * n for _ in range(n)]
-    for node1, node2, distance in graph:
-        distances[node1][node2] = distance
+    for a, b, d in graph:
+        distances[a][b] = d
 
     for k in range(n):
         distances[k][k] = 0
@@ -10,6 +10,7 @@ def floyd_warshall(n, graph):
                 distances[i][j] = min(
                     distances[i][j], distances[i][k] + distances[k][j]
                 )
+
     return distances
 
 

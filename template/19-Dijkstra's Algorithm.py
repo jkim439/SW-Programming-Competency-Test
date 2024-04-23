@@ -3,9 +3,9 @@ from heapq import *
 
 def dijkstra(n, graph, start):
     adjacent = [[] for _ in range(n + 1)]
-    for node1, node2, distance in graph:
-        adjacent[node1].append([distance, node2])
-        adjacent[node2].append([distance, node1])
+    for a, b, d in graph:
+        adjacent[a].append([d, b])
+        adjacent[b].append([d, a])
 
     distances = [float("inf")] * (n + 1)
     distances[start] = 0

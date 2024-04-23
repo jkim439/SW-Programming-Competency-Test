@@ -2,29 +2,27 @@ from heapq import *
 
 
 def prim(n, graph, start):
-    adjacent = [[] for _ in range(n + 1)]
-    for node1, node2, weight in graph:
-        adjacent[node1].append([weight, node1, node2])
-        adjacent[node2].append([weight, node2, node1])
-
     mst = []
 
-    visited = {start}
+    adjacent = [[] for _ in range(n + 1)]
+    for a, b, w in graph:
+        adjacent[a].append([w, a, b])
+        adjacent[b].append([w, b, a])
 
+    visited = {start}
     queue = adjacent[start]
     heapify(queue)
 
     while queue:
-        weight, node1, node2 = heappop(queue)
+        w, a, b = heappop(queue)
 
-        if node2 not in visited:
-            visited.add(node2)
-            mst.append([node1, node2, weight])
+        if b not in visited:
+            visited.add(b)
+            mst.append([a, b, w])
 
-            for edge in adjacent[node2]:
+            for edge in adjacent[b]:
                 if edge[2] not in visited:
                     heappush(queue, edge)
-
     return mst
 
 

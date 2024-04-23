@@ -1,13 +1,13 @@
 def binary_search(data, value):
-    if len(data) <= 1:
-        return False
-
     if data[0] == value:
         return True
 
+    if len(data) <= 1:
+        return False
+
     median = len(data) // 2
 
-    if value == data[median]:
+    if data[median] == value:
         return True
     elif value < data[median]:
         return binary_search(data[:median], value)
