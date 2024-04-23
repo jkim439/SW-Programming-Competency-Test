@@ -10,12 +10,12 @@ def Input_Data():
     return N, num, T, query
 
 
-sol = []
 # 입력받는 부분
 N, num, T, query = Input_Data()
 
 
 # 여기서부터 작성
+sol = []
 from bisect import bisect_left
 
 for q in query:
