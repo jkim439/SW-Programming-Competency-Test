@@ -1,41 +1,27 @@
-import sys
+n = int(input())
+city_budget = list(map(int, input().split()))
+total_budget = int(input())
 
-sys.setrecursionlimit(100)
+city_budget.sort()
+start = 1
+end = city_budget[-1]
+max_budget = 0
 
+while start <= end:
+    mid_budget = (start + end) // 2
+    use_budget = 0
 
-def binary_search(city, start, end):
-    median = (start + end) // 2
-    print(start, end, median)
-    if median == start or median == end:
-        return median
+    for budget in city_budget:
+        if budget <= mid_budget:
+            use_budget += budget
+        else:
+            use_budget += mid_budget
 
-    result = sum([i for i in city if i < median]) + (
-        len([i for i in city if i >= median]) * median
-    )
-
-    if result < median:
-        return binary_search(city, start, median)
-    elif result > median:
-        return binary_search(city, median, end)
+    if use_budget > total_budget:
+        end = mid_budget - 1
     else:
-        return True
+        max_budget = mid_budget
+        start = mid_budget + 1
 
 
-city = [163, 209, 218, 325, 383, 410, 413, 443, 456, 531]
-budge = 3051
-print(city)
-
-start = 0
-end = budge
-median = sum(city) // len(city)
-
-answer = 0
-
-if (
-    sum([i for i in city if i < median])
-    + (len([i for i in city if i >= median]) * median)
-    < budge
-):
-    binary_search(city, 0, median)
-else:
-    binary_search(city, median, end)
+print(max_budget)

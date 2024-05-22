@@ -8,10 +8,8 @@ def Input_Data():
     return N, pos
 
 
-# 입력받는 부분
 N, pos = Input_Data()
 
-# 여기서부터 작성
 from bisect import bisect_left, bisect_right
 
 pos.sort()
@@ -23,5 +21,4 @@ for i, n in enumerate(pos):
         if count > 0:
             answer += count
 
-# 출력하는 부분
 print(answer)

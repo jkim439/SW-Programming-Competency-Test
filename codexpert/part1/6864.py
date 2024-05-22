@@ -8,10 +8,8 @@ def Input_Data():
     return N, package
 
 
-# 입력받는 부분
 N, package = Input_Data()
 
-# 여기서부터 작성
 from heapq import *
 
 heapify(package)
@@ -24,5 +22,4 @@ for _ in range(N - 1):
     heappush(package, a + b)
 
 
-# 출력하는 부분
 print(sum)

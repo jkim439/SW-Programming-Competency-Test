@@ -12,10 +12,8 @@ def Input_Data():
 T = int(sys.stdin.readline())
 sol = []
 for _ in range(T):
-    # 입력받는 부분
     N, M, job = Input_Data()
 
-    # 여기서부터 작성
     dq = deque(job)
     count = 0
     index = M
@@ -36,6 +34,4 @@ for _ in range(T):
 
     sol.append(count)
 
-
-# 출력하는 부분
 print(*sol, sep="\n")

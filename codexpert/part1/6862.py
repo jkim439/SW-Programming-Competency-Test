@@ -8,11 +8,8 @@ def Input_Data():
     return N, num
 
 
-# 입력받는 부분
 N, num = Input_Data()
 
-# 여기서부터 작성
 answer = sorted(num)
 
-# 출력하는 부분
 print(*answer[0:4])

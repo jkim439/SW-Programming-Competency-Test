@@ -23,7 +23,6 @@ def Solve():
             print(len(q))
 
 
-# 입력받는 부분
 N, list_cmd = Input_Data()
 
 Solve()
