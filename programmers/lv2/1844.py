@@ -1,3 +1,10 @@
+def solution(maps):
+    r = len(maps)
+    c = len(maps[0])
+    answer = bfs(r, c, maps)
+    return answer if answer > 0 else -1
+
+
 def bfs(r, c, graph):
     dy = [-1, 0, 1, 0]
     dx = [0, 1, 0, -1]
@@ -22,17 +29,3 @@ def bfs(r, c, graph):
                 queue.append([ny, nx])
 
     return visited[r - 1][c - 1]
-
-
-print(
-    bfs(
-        4,
-        6,
-        [
-            [1, 0, 1, 1, 1, 1],
-            [1, 0, 1, 0, 1, 0],
-            [1, 0, 1, 0, 1, 1],
-            [1, 1, 1, 0, 1, 1],
-        ],
-    )
-)
